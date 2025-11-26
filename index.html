@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Simulasi Tabungan Bunga Majemuk</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Simulasi Tabungan (Bunga Majemuk)</h1>
+            <form id="form">
+                <label>Modal awal (P):
+                    <input type="number" id="P" required>
+                </label>
+                    <label>Bunga per bulan (%) (r):
+                    <input type="number" id="r" step="0.01" required>
+                </label>
+                    <label>Jumlah bulan (n):
+                    <input type="number" id="bulan"  min="0" required>
+                </label>
+                <button type="submit">Hitung</button>
+            </form>
+                <section id="results" style="display:none;">
+                    <div>rumus umumnya A = P(1+r)^n</div>
+                        <h2>Hasil Perhitungan</h2>
+                    <div class="info">
+                        <p id="summary"></p>
+                    </div>
+                    <canvas id="chart" width="800" height="320"></canvas>
+                    <h3>Tabel Hasil</h3>
+                    <div class="table-wrapper">
+                        <table id="resultTable">
+                            <thead>
+                                <tr>
+                                    <th>Bulan</th>
+                                    <th>Iteratif</th>
+                                    <th>Rekursif</th>
+                                    <th>running time iterasi</th>
+                                    <th>running time rekursif</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        <script src="script.js"></script>
+    </body>
+</html>
