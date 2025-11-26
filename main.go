@@ -7,9 +7,7 @@ import (
 	"time"
 )
 
-// =========================
-// ===== DATA STRUCT =======
-// =========================
+//struct
 
 type MonthResult struct {
 	Bulan      int     `json:"bulan"`
@@ -27,27 +25,17 @@ type CalcResponse struct {
 	Rumus map[string]string `json:"rumus"`
 }
 
-// =========================
-// ===== ALGORITMA =========
-// =========================
+// algoritma
 
 func iteratif(P, r float64, n int) float64 {
-	for i := 0; i < n; i++ {
-		P = P * (1 + r)
-	}
-	return P
+	//isi iteratif
 }
 
 func rekursif(P, r float64, n int) float64 {
-	if n == 0 {
-		return P
-	}
-	return rekursif(P, r, n-1) * (1 + r)
+	//isi rekursif
 }
 
-// =========================
-// ===== PARSER QUERY ======
-// =========================
+// parserquery
 
 func parseFloatQuery(r *http.Request, key string, def float64) float64 {
 	q := r.URL.Query().Get(key)
@@ -73,9 +61,7 @@ func parseIntQuery(r *http.Request, key string, def int) int {
 	return v
 }
 
-// =========================
-// ======= HANDLER =========
-// =========================
+// handler
 
 func calcHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -128,9 +114,7 @@ func calcHandler(w http.ResponseWriter, r *http.Request) {
 	enc.Encode(resp)
 }
 
-// =========================
-// ========= MAIN ==========
-// =========================
+// main
 
 func main() {
 	mux := http.NewServeMux()
